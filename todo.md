@@ -170,3 +170,13 @@
 - [x] Audit homepage and editorial image wrappers for consistent border application
 - [x] Apply a reusable thin animated multi-color border to relevant site images without covering content
 - [x] Verify desktop/mobile and reduced-motion behavior, run tests, and save a new checkpoint
+
+## Caregiver image replacement
+
+- [x] Replace the failed image in the “Help a caregiver feel the next step” section with a dependable new caregiver-support visual
+- [x] Verify the section image, run tests, and save a new checkpoint
+
+## Confirmed donor visual follow-up
+
+- [x] Use a confirmed donor-specific caregiver image rather than the contact fallback
+- [x] Align the donor image alt text with the selected visual, re-verify, and save a checkpoint
