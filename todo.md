@@ -76,3 +76,24 @@
 - [x] Expand metadata and on-page SEO for blog, FAQ, care, and donation intent keywords
 - [x] Add richer motion and interaction while preserving reduced-motion accessibility
 - [x] Run publish-readiness tests and save a new checkpoint
+
+## Refinement pass
+
+- [x] Replace overly explanatory blog copy with concise professional wording and a simple coming-soon note
+- [x] Rotate hero images automatically every few seconds with a smooth transition
+- [x] Fix overlapping hero/card elements across responsive breakpoints
+- [x] Add more image-led homepage sections with polished spacing and hierarchy
+- [ ] Re-run desktop/mobile checks, tests, and save a refined checkpoint
+
+## Visual polish pass
+
+- [ ] Replace AI-sounding blog intro copy with concise professional wording and a brief coming-soon note
+- [x] Increase hero rotation frequency and use a clean photo frame without decorative circles
+- [x] Improve image sharpness and presentation across homepage image sections
+- [x] Remove card and reminder overlaps across desktop and mobile breakpoints
+- [x] Re-run type/tests and responsive screenshots, then save a refined checkpoint
+
+- [x] Add explicit responsive image sizing/decoding attributes for sharper, more stable image rendering
+- [x] Capture a post-edit desktop screenshot to verify hero and card spacing at large breakpoints
+
+- [ ] Save a successful checkpoint for the exact post-refinement state after the latest Home, blog, and CSS changes

@@ -34,3 +34,7 @@
 .marquee-track img{width:min(32vw,420px);height:240px;object-fit:cover;border-radius:1.5rem;box-shadow:0 16px 40px rgba(26,42,38,.12)}
 @keyframes care-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee-track img{transition:none}}
+
+.hero-image{animation:hero-crossfade .7s ease both}
+@keyframes hero-crossfade{from{opacity:.35;transform:scale(1.015)}to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.hero-image{animation:none}}
