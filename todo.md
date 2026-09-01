@@ -100,11 +100,11 @@
 
 ## Homepage hierarchy and article expansion
 
-- [ ] Remove the overlapping Care note and Today’s reminder hero cards
-- [ ] Add image-led care-gap and service sections with softer visual hierarchy
-- [ ] Add meaningful icons to therapy, outreach, caregiver, and donor points
-- [ ] Expand the public SEO blog library from three to seven articles
-- [ ] Update sitemap and related article navigation for all new blog URLs
+- [x] Remove the overlapping Care note and Today’s reminder hero cards
+- [x] Add image-led care-gap and service sections with softer visual hierarchy
+- [x] Add meaningful icons to therapy, outreach, caregiver, and donor points
+- [x] Expand the public SEO blog library from three to seven articles
+- [x] Update sitemap and related article navigation for all new blog URLs
 - [x] Re-run responsive checks and tests, then save a new checkpoint
 
 ## Hero and image-rich refinement
@@ -123,5 +123,10 @@
 - [x] Capture post-edit mobile screenshots for /blog and /faq after the latest hero and homepage changes
 - [x] Save a successful checkpoint for the exact latest homepage, article, and sitemap state
 
-- [ ] Save a new successful checkpoint after the latest Home, ContentPages, and sitemap changes
-- [ ] Verify homepage, mobile Blog, and mobile FAQ against the exact saved checkpoint state
+- [x] Save a new successful checkpoint after the latest Home, ContentPages, and sitemap changes
+- [x] Verify homepage, mobile Blog, and mobile FAQ against the exact saved checkpoint state
+
+- [x] Add meaningful icons to caregiver learning and donor support points
+- [ ] Re-verify homepage, mobile Blog, and mobile FAQ after the saved checkpoint
+
+- [ ] Save a new checkpoint after the caregiver and donor icon updates
