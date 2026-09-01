@@ -180,3 +180,9 @@
 
 - [x] Use a confirmed donor-specific caregiver image rather than the contact fallback
 - [x] Align the donor image alt text with the selected visual, re-verify, and save a checkpoint
+
+## Footer brand refinement
+
+- [x] Add the KindStepCare logo beside the footer wordmark
+- [x] Replace the footer newsletter prompt with an emotional quote
+- [x] Verify desktop/mobile footer layout, run tests, and save a new checkpoint
