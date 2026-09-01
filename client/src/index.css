@@ -37,4 +37,10 @@
 
 .hero-image{animation:hero-crossfade .7s ease both}
 @keyframes hero-crossfade{from{opacity:.35;transform:scale(1.015)}to{opacity:1;transform:scale(1)}}
-@media (prefers-reduced-motion:reduce){.hero-image{animation:none}}
+@property --hero-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+.hero-frame-accent{--hero-angle:0deg;background:conic-gradient(from var(--hero-angle),#0d7a6b,#f0a12b,#d85d7a,#6a8df7,#0d7a6b);animation:hero-color-spin 9s linear infinite}
+@keyframes hero-color-spin{to{--hero-angle:360deg}}
+@property --reminder-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+.reminder-accent{--reminder-angle:0deg;background:conic-gradient(from var(--reminder-angle),#0d7a6b,#f0a12b,#d85d7a,#6a8df7,#0d7a6b);animation:reminder-color-spin 6s linear infinite}
+@keyframes reminder-color-spin{to{--reminder-angle:360deg}}
+@media (prefers-reduced-motion:reduce){.hero-image,.hero-frame-accent,.reminder-accent{animation:none}}

@@ -148,3 +148,19 @@
 - [x] Increase the vertical separation between Today’s reminder and the Care note so no text is covered
 - [x] Replace unreliable generated image references with dependable fallbacks or newly generated assets
 - [x] Re-run responsive checks and tests, then save a new checkpoint
+
+## Animated hero line treatment
+
+- [x] Replace the static brown-golden line behind the hero image with a rotating multi-color line confined to the image frame
+- [x] Add a separate rotating color accent for Today’s reminder that cannot overlap the card content
+- [x] Preserve reduced-motion behavior, verify responsive visuals, run tests, and save a new checkpoint
+
+## Reminder border-only refinement
+
+- [x] Remove the rotating filled-box effect from Today’s reminder and keep only a thin animated color border
+- [x] Verify the plain card background and clear text, run tests, and save a new checkpoint
+
+## Hero border-only accent refinement
+
+- [x] Replace the oversized rotating hero shape with the same thin animated multi-color border treatment used by Today’s reminder
+- [x] Verify hero image framing and reduced-motion behavior, run tests, and save a new checkpoint
