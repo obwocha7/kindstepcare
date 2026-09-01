@@ -137,3 +137,14 @@
 - [x] Restore the Care note and Today’s reminder hero cards with non-overlapping spacing
 - [x] Replace the care-gap image and place it on the right before the text in the responsive layout
 - [x] Re-run responsive checks and tests, then save a new checkpoint
+
+## Hero reminder spacing correction
+
+- [x] Move Today’s reminder farther below the Care note so it never covers the Care note text
+- [x] Verify desktop and mobile hero spacing, run tests, and save a new checkpoint
+
+## Hero spacing and image reliability correction
+
+- [x] Increase the vertical separation between Today’s reminder and the Care note so no text is covered
+- [x] Replace unreliable generated image references with dependable fallbacks or newly generated assets
+- [x] Re-run responsive checks and tests, then save a new checkpoint

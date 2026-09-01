@@ -7,7 +7,7 @@ import { PageHero, SiteFrame } from "@/components/SiteFrame";
 import { trpc } from "@/lib/trpc";
 
 const learningImage = "/manus-storage/learning-play-v3_c6c612b9.jpg";
-const courseImage = "/manus-storage/donor-partnership-v2_64d9ee1c.jpg";
+const courseImage = "/manus-storage/donor-partnership-v3_3d80840e.jpg";
 export function selectRelatedStories<T extends { id: number }>(items: T[], currentId: number, limit = 2) { return items.filter((item) => item.id !== currentId).slice(0, limit); }
 export function articleViewModel<T extends { id: number; title: string; sourceName: string; sourceUrl: string; summary: string }>(item: T, allItems: T[]) { return { title: item.title, sourceLabel: item.sourceName, sourceUrl: item.sourceUrl, summary: item.summary, related: selectRelatedStories(allItems, item.id) }; }
 const pageCopy = {
