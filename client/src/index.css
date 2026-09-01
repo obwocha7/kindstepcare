@@ -28,3 +28,9 @@
 @keyframes float-slow { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-8px) rotate(.5deg); } }
 @keyframes reveal-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .float-slow, .reveal-up { animation: none !important; } }
+
+.marquee-viewport{overflow:hidden;width:100%;mask-image:linear-gradient(to right,transparent,black 7%,black 93%,transparent)}
+.marquee-track{display:flex;width:max-content;gap:1rem;animation:care-marquee 34s linear infinite}
+.marquee-track img{width:min(32vw,420px);height:240px;object-fit:cover;border-radius:1.5rem;box-shadow:0 16px 40px rgba(26,42,38,.12)}
+@keyframes care-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee-track img{transition:none}}

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Research from "./pages/Research";
 import Manage from "./pages/Manage";
 import { About, Article, Care, Contact, Learn, News, Stories } from "./pages/EditorialPages";
+import { Blog, BlogArticle, FAQ } from "./pages/ContentPages";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -22,6 +23,9 @@ function Router() {
       <Route path={"/stories"} component={Stories} />
       <Route path={"/news"} component={News} />
       <Route path={"/news/:id"} component={Article} />
+      <Route path={"/blog"} component={Blog} />
+      <Route path={"/blog/:slug"} component={({ params }: any) => <BlogArticle slug={params.slug} />} />
+      <Route path={"/faq"} component={FAQ} />
       <Route path={"/contact"} component={Contact} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

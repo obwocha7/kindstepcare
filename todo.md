@@ -65,3 +65,14 @@
 
 - [x] Add router-level coverage for approved-news region/topic inputs and filtered results
 - [x] Add router-level coverage for editorial-summary update success and persistence failure
+
+## Publish-ready visual and content pass
+
+- [x] Research elegant motion-led website patterns and apply a cohesive premium direction
+- [x] Replace the hero with a stronger image-led composition showing dignified African family care
+- [x] Add multiple generated images across therapy, play, parent support, and community sections
+- [x] Add several SEO-rich cerebral palsy blog articles directly to the public website
+- [x] Add FAQ page/section with common cerebral palsy questions and medically responsible answers
+- [x] Expand metadata and on-page SEO for blog, FAQ, care, and donation intent keywords
+- [x] Add richer motion and interaction while preserving reduced-motion accessibility
+- [x] Run publish-readiness tests and save a new checkpoint
