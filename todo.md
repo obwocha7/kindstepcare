@@ -127,6 +127,13 @@
 - [x] Verify homepage, mobile Blog, and mobile FAQ against the exact saved checkpoint state
 
 - [x] Add meaningful icons to caregiver learning and donor support points
-- [ ] Re-verify homepage, mobile Blog, and mobile FAQ after the saved checkpoint
+- [x] Re-verify homepage, mobile Blog, and mobile FAQ after the saved checkpoint
 
-- [ ] Save a new checkpoint after the caregiver and donor icon updates
+- [x] Save a new checkpoint after the caregiver and donor icon updates
+
+## Distinct imagery and corrected hero layout
+
+- [x] Generate distinct fresh imagery for hero, care gap, therapy, impact, learning, stories, donor, and contact sections
+- [x] Restore the Care note and Today’s reminder hero cards with non-overlapping spacing
+- [x] Replace the care-gap image and place it on the right before the text in the responsive layout
+- [x] Re-run responsive checks and tests, then save a new checkpoint
