@@ -215,3 +215,12 @@
 - [x] Save the post-hero-transition-performance checkpoint and re-verify the mobile hero against that saved state
 
 - [x] Save the exact hero-transition-performance checkpoint and re-verify the mobile homepage against that saved version
+
+## Hero carousel loop-boundary performance
+
+- [x] Keep all hero image layers mounted to avoid first-to-second and last-to-first cold starts
+- [x] Synchronize hero preloading and rotation timing while preserving reduced motion
+- [x] Verify both loop boundaries on desktop/mobile, run tests, and save a checkpoint
+
+- [x] Save the exact post-loop-boundary checkpoint
+- [x] Re-verify desktop and mobile carousel transitions across first-to-second and last-to-first states

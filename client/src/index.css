@@ -35,7 +35,8 @@
 @keyframes care-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee-track img{transition:none}}
 
-.hero-image{animation:hero-crossfade .7s ease both}
+.hero-image{opacity:0;visibility:hidden;transition:opacity .55s ease,visibility .55s ease;animation:none}
+.hero-image.is-active{opacity:1;visibility:visible;animation:hero-crossfade .55s ease both}
 @keyframes hero-crossfade{from{opacity:.35;transform:scale(1.015)}to{opacity:1;transform:scale(1)}}
 @property --hero-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
 .hero-frame-accent{--hero-angle:0deg;background:conic-gradient(from var(--hero-angle),#0d7a6b,#f0a12b,#d85d7a,#6a8df7,#0d7a6b);animation:hero-color-spin 9s linear infinite}
