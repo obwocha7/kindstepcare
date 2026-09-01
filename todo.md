@@ -195,3 +195,9 @@
 - [x] Re-run content/link/accessibility tests and save a new checkpoint
 
 - [x] Fix dynamic category-icon JSX in the blog card and article badge, then re-run checks
+
+## Branding removal and ZIP export
+
+- [x] Remove visible “Made with Manus” branding from the user-facing site
+- [x] Verify no user-facing Manus credit remains and run project checks
+- [x] Create a clean downloadable ZIP of the current KindStepCare project
