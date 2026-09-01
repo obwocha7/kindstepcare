@@ -8,6 +8,8 @@ import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
+import { sdk } from "./sdk";
+import { importNewsFromFeed } from "../newsImport";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -36,6 +38,20 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   registerStorageProxy(app);
   registerOAuthRoutes(app);
+  app.post("/api/scheduled/news-refresh", async (req, res) => {
+    try {
+      const user = await sdk.authenticateRequest(req);
+      if (!user.isCron || !user.taskUid) return res.status(403).json({ error: "cron-only" });
+      const feeds = [
+        { url: "https://cparf.org/news-and-events/feed/", name: "Cerebral Palsy Alliance Research Foundation" },
+        { url: "https://actioncp.org/feed/", name: "Action Cerebral Palsy" },
+      ];
+      const results = await Promise.allSettled(feeds.map((feed) => importNewsFromFeed(feed.url, feed.name)));
+      return res.json({ ok: true, imported: results.reduce((sum, result) => sum + (result.status === "fulfilled" ? result.value.imported : 0), 0) });
+    } catch (error) {
+      return res.status(500).json({ error: String(error), timestamp: new Date().toISOString() });
+    }
+  });
   // tRPC API
   app.use(
     "/api/trpc",
