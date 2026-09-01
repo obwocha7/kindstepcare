@@ -201,3 +201,17 @@
 - [x] Remove visible “Made with Manus” branding from the user-facing site
 - [x] Verify no user-facing Manus credit remains and run project checks
 - [x] Create a clean downloadable ZIP of the current KindStepCare project
+
+## Hero transition performance
+
+- [x] Shorten the hero image rotation interval
+- [x] Preload the next hero image to reduce transition wait time
+- [x] Verify fast desktop/mobile transitions, reduced-motion behavior, and tests, then save a checkpoint
+
+- [x] Capture a mobile homepage verification for the faster hero image transition
+- [x] Verify reduced-motion behavior after the new preload and rotation timing
+- [x] Save a new checkpoint for the exact post-hero-transition-performance state
+
+- [x] Save the post-hero-transition-performance checkpoint and re-verify the mobile hero against that saved state
+
+- [x] Save the exact hero-transition-performance checkpoint and re-verify the mobile homepage against that saved version

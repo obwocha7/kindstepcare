@@ -30,7 +30,8 @@ const defaultImpact = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [heroIndex, setHeroIndex] = useState(0);
-  useEffect(() => { const timer = window.setInterval(() => setHeroIndex((index) => (index + 1) % heroImages.length), 3200); return () => window.clearInterval(timer); }, []);
+  useEffect(() => { const timer = window.setInterval(() => setHeroIndex((index) => (index + 1) % heroImages.length), 2200); return () => window.clearInterval(timer); }, []);
+  useEffect(() => { heroImages.forEach((source) => { const image = new Image(); image.decoding = "async"; image.src = source; }); }, []);
   const [selectedImpact, setSelectedImpact] = useState(defaultImpact[0]);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
