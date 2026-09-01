@@ -164,3 +164,9 @@
 
 - [x] Replace the oversized rotating hero shape with the same thin animated multi-color border treatment used by Today’s reminder
 - [x] Verify hero image framing and reduced-motion behavior, run tests, and save a new checkpoint
+
+## Animated image borders across the site
+
+- [x] Audit homepage and editorial image wrappers for consistent border application
+- [x] Apply a reusable thin animated multi-color border to relevant site images without covering content
+- [x] Verify desktop/mobile and reduced-motion behavior, run tests, and save a new checkpoint

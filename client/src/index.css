@@ -43,4 +43,7 @@
 @property --reminder-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
 .reminder-accent{--reminder-angle:0deg;background:conic-gradient(from var(--reminder-angle),#0d7a6b,#f0a12b,#d85d7a,#6a8df7,#0d7a6b);animation:reminder-color-spin 6s linear infinite}
 @keyframes reminder-color-spin{to{--reminder-angle:360deg}}
-@media (prefers-reduced-motion:reduce){.hero-image,.hero-frame-accent,.reminder-accent{animation:none}}
+@property --image-border-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+main img:not(.hero-image),.reveal-up img{border:2px solid transparent;background:linear-gradient(#f7fbfa,#f7fbfa) padding-box,conic-gradient(from var(--image-border-angle),#0d7a6b,#f0a12b,#d85d7a,#6a8df7,#0d7a6b) border-box;animation:image-border-spin 8s linear infinite}
+@keyframes image-border-spin{to{--image-border-angle:360deg}}
+@media (prefers-reduced-motion:reduce){.hero-image,.hero-frame-accent,.reminder-accent,main img:not(.hero-image),.reveal-up img{animation:none}}
