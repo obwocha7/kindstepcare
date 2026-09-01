@@ -1,5 +1,5 @@
 import { drizzle } from "drizzle-orm/mysql2";
-import { desc, eq } from "drizzle-orm";
+import { and, desc, eq, like, or } from "drizzle-orm";
 import { InsertUser, users, contentItems, newsItems, contactSubmissions } from "../drizzle/schema";
 import { ENV } from "./_core/env";
 
@@ -28,6 +28,7 @@ export async function createContentItem(input: { slug: string; title: string; co
 export async function updateContentItem(id: number, input: { slug: string; title: string; content: string; category: string; imageUrl?: string; published?: number }) { const db = await getDb(); if (!db) return { success: false }; await db.update(contentItems).set(input).where(eq(contentItems.id, id)); return { success: true }; }
 export async function listModerationNews() { const db = await getDb(); if (!db) return []; return db.select().from(newsItems).orderBy(desc(newsItems.createdAt)); }
 export async function setNewsStatus(id: number, status: "approved" | "rejected" | "pending") { const db = await getDb(); if (!db) return { success: false }; await db.update(newsItems).set({ status, publishedAt: status === "approved" ? new Date() : null }).where(eq(newsItems.id, id)); return { success: true }; }
-export async function listApprovedNews() { const db = await getDb(); if (!db) return []; return db.select().from(newsItems).where(eq(newsItems.status, "approved")).orderBy(desc(newsItems.publishedAt), desc(newsItems.createdAt)); }
+export async function listApprovedNews(filters?: { region?: string; topic?: string }) { const db = await getDb(); if (!db) return []; const conditions = [eq(newsItems.status, "approved")]; if (filters?.region) conditions.push(like(newsItems.sourceName, `%${filters.region}%`)); if (filters?.topic) conditions.push(or(like(newsItems.title, `%${filters.topic}%`), like(newsItems.summary, `%${filters.topic}%`)) as never); return db.select().from(newsItems).where(and(...conditions)).orderBy(desc(newsItems.publishedAt), desc(newsItems.createdAt)); }
 export async function createContactSubmission(input: { name: string; email: string; audience: string; message: string }) { const db = await getDb(); if (!db) return { success: false }; await db.insert(contactSubmissions).values(input); return { success: true }; }
-export async function importPendingNews(items: Array<{ sourceName: string; sourceUrl: string; title: string; summary: string; imageUrl?: string }>) { const db = await getDb(); if (!db || items.length === 0) return { success: false, imported: 0 }; await db.insert(newsItems).values(items.map((item) => ({ ...item, status: "pending" as const }))); return { success: true, imported: items.length }; }
+export async function importPendingNews(items: Array<{ sourceName: string; sourceUrl: string; title: string; summary: string; editorialSummary?: string; imageUrl?: string }>) { const db = await getDb(); if (!db || items.length === 0) return { success: false, imported: 0 }; await db.insert(newsItems).values(items.map((item) => ({ ...item, status: "pending" as const }))); return { success: true, imported: items.length }; }
+export async function updateNewsEditorialSummary(id: number, editorialSummary: string) { const db = await getDb(); if (!db) return { success: false }; await db.update(newsItems).set({ editorialSummary }).where(eq(newsItems.id, id)); return { success: true }; }

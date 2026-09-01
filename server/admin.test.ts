@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { appRouter } from "./routers";
-import { createContentItem, setNewsStatus, updateContentItem } from "./db";
+import { createContentItem, listApprovedNews, setNewsStatus, updateContentItem, updateNewsEditorialSummary } from "./db";
 
 vi.mock("./db", () => ({
   listPublishedContent: vi.fn(async () => []),
@@ -10,6 +10,7 @@ vi.mock("./db", () => ({
   listApprovedNews: vi.fn(async () => []),
   listModerationNews: vi.fn(async () => [{ id: 7, status: "pending" }]),
   setNewsStatus: vi.fn(async () => ({ success: true })),
+  updateNewsEditorialSummary: vi.fn(async () => ({ success: true })),
   createContactSubmission: vi.fn(async () => ({ success: false })),
   importPendingNews: vi.fn(async () => ({ success: true, imported: 1 })),
   getUserByOpenId: vi.fn(),
@@ -38,6 +39,17 @@ describe("KindStepCare admin workflows", () => {
     const caller = appRouter.createCaller(adminContext);
     await expect(caller.content.create({ slug: "new-note", title: "New note", content: "A note with enough detail.", category: "learning" })).resolves.toEqual({ success: false });
     await expect(caller.content.update({ id: 1, slug: "old-note", title: "Updated note", content: "An updated note with enough detail.", category: "learning" })).resolves.toEqual({ success: false });
+  });
+  it("passes approved-news region and topic filters to persistence", async () => {
+    vi.mocked(listApprovedNews).mockResolvedValueOnce([{ id: 2, sourceName: "Kenya · recent coverage" }] as never);
+    await expect(appRouter.createCaller(adminContext).news.approved({ region: "Kenya", topic: "care" })).resolves.toEqual([{ id: 2, sourceName: "Kenya · recent coverage" }]);
+    expect(listApprovedNews).toHaveBeenCalledWith({ region: "Kenya", topic: "care" });
+  });
+  it("supports editorial-summary updates and preserves persistence failures", async () => {
+    const caller = appRouter.createCaller(adminContext);
+    await expect(caller.news.updateEditorialSummary({ id: 7, editorialSummary: "A concise context note for caregivers and donors." })).resolves.toEqual({ success: true });
+    vi.mocked(updateNewsEditorialSummary).mockResolvedValueOnce({ success: false });
+    await expect(caller.news.updateEditorialSummary({ id: 7, editorialSummary: "A second context note with enough detail." })).resolves.toEqual({ success: false });
   });
   it("surfaces moderation persistence failures", async () => {
     vi.mocked(setNewsStatus).mockResolvedValueOnce({ success: false });

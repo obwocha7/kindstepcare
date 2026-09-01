@@ -33,3 +33,35 @@
 - [x] Wire impact metric controls, labels, values, and notes to editable content records
 - [x] Add RSS fetch and persistence failure-path tests
 - [x] Save a new successful checkpoint for the final post-edit implementation state
+
+## SEO, editorial, and experience upgrade
+
+- [x] Add richer multi-page navigation for About, Care & Courses, Learning Hub, Stories, News, and Contact
+- [x] Add SEO title, description, canonical, Open Graph, Twitter, structured data, sitemap, and robots foundations
+- [x] Add keyword-rich, medically responsible copy for cerebral palsy care, therapy, caregiver learning, Kenya, Africa, and global resources
+- [x] Add individual SEO blog/article pages with source attribution, related stories, and share metadata
+- [x] Extend news ingestion to recent Kenya, Africa, and global cerebral palsy sources with region/category filters and visible homepage cards
+- [x] Add moderation-safe generated editorial summaries and image handling without fabricating first-party stories or testimonials
+- [x] Add richer image-led sections and subtle motion with reduced-motion support
+- [x] Add SEO and news/blog Vitest coverage
+- [x] Capture upgraded responsive screenshots and save a new checkpoint
+
+- [x] Add a dedicated Stories route and navigation destination
+- [x] Add related stories to article pages
+- [x] Add region and category filters to the news listing and API query
+- [x] Add a moderation-safe editorial summary field/workflow for imported news
+- [x] Add SEO metadata, article behavior, and filter tests
+
+- [x] Add server-side region and topic filters to approved-news queries and wire the News page to them
+- [x] Add a dedicated editable editorial summary field for imported news with moderation support
+- [x] Add tests for SEO metadata output, article behavior, and server-side news filtering
+
+- [x] Add Vitest coverage for SEO metadata and canonical social tags
+- [x] Add Vitest coverage for article behavior, related stories, and source attribution
+- [x] Add Vitest coverage for approved-news server filters and editorial-summary updates
+
+- [x] Add a focused article-view model helper covering source attribution and related-story selection
+- [x] Add router-level tests for approved-news region/topic filters and editorial-summary update results
+
+- [x] Add router-level coverage for approved-news region/topic inputs and filtered results
+- [x] Add router-level coverage for editorial-summary update success and persistence failure

@@ -21,3 +21,10 @@
 @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
 @media (min-width: 1024px) { .container { max-width: 1280px; padding-inline: 2rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
+/* Editorial motion layer: intentionally subtle and disabled for reduced-motion users. */
+.float-slow { animation: float-slow 8s ease-in-out infinite; }
+.reveal-up { animation: reveal-up .7s cubic-bezier(.22,1,.36,1) both; }
+@keyframes float-slow { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-8px) rotate(.5deg); } }
+@keyframes reveal-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .float-slow, .reveal-up { animation: none !important; } }

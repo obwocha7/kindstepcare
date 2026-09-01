@@ -30,6 +30,7 @@ export const newsItems = mysqlTable("news_items", {
   sourceUrl: varchar("sourceUrl", { length: 500 }).notNull(),
   title: varchar("title", { length: 255 }).notNull(),
   summary: text("summary").notNull(),
+  editorialSummary: text("editorialSummary"),
   imageUrl: varchar("imageUrl", { length: 500 }),
   status: mysqlEnum("status", ["pending", "approved", "rejected"]).default("pending").notNull(),
   publishedAt: timestamp("publishedAt"),

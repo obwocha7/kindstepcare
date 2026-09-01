@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /manage
+Sitemap: https://kindstepcare.manus.space/sitemap.xml

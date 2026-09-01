@@ -11,6 +11,21 @@ const imageValue = (block: string) => {
   return enclosure || media;
 };
 
+export const trustedNewsFeeds = [
+  { url: "https://news.google.com/rss/search?q=cerebral+palsy+Kenya&hl=en-KE&gl=KE&ceid=KE:en", sourceName: "Kenya · recent coverage" },
+  { url: "https://news.google.com/rss/search?q=cerebral+palsy+Africa&hl=en&gl=ZA&ceid=ZA:en", sourceName: "Africa · recent coverage" },
+  { url: "https://news.google.com/rss/search?q=cerebral+palsy&hl=en&gl=US&ceid=US:en", sourceName: "Global · recent coverage" },
+];
+
+export async function importTrustedNews() {
+  let imported = 0;
+  for (const feed of trustedNewsFeeds) {
+    try { const result = await importNewsFromFeed(feed.url, feed.sourceName); if (result.success) imported += result.imported; }
+    catch (error) { console.warn(`Trusted feed skipped: ${feed.sourceName}`, error); }
+  }
+  return { success: true, imported };
+}
+
 export async function importNewsFromFeed(feedUrl: string, sourceName: string) {
   const response = await fetch(feedUrl, { headers: { Accept: "application/rss+xml, application/atom+xml, text/xml" } });
   if (!response.ok) throw new Error(`Feed returned ${response.status}`);

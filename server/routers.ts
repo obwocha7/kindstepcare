@@ -4,8 +4,8 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { adminProcedure, publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
-import { createContactSubmission, createContentItem, importPendingNews, listAllContent, listApprovedNews, listModerationNews, listPublishedContent, setNewsStatus, updateContentItem } from "./db";
-import { importNewsFromFeed } from "./newsImport";
+import { createContactSubmission, createContentItem, importPendingNews, listAllContent, listApprovedNews, listModerationNews, listPublishedContent, setNewsStatus, updateContentItem, updateNewsEditorialSummary } from "./db";
+import { importNewsFromFeed, importTrustedNews } from "./newsImport";
 import { createHeartbeatJob } from "./_core/heartbeat";
 
 export const appRouter = router({
@@ -25,11 +25,13 @@ export const appRouter = router({
     update: adminProcedure.input(z.object({ id: z.number().int(), slug: z.string().min(3), title: z.string().min(3), content: z.string().min(10), category: z.string().min(2), imageUrl: z.string().url().optional(), published: z.number().int().min(0).max(1).optional() })).mutation(({ input: { id, ...values } }) => updateContentItem(id, values)),
   }),
   news: router({
-    approved: publicProcedure.query(() => listApprovedNews()),
-    importPending: adminProcedure.input(z.object({ items: z.array(z.object({ sourceName: z.string(), sourceUrl: z.string().url(), title: z.string().min(3), summary: z.string().min(10), imageUrl: z.string().url().optional() })) })).mutation(({ input }) => importPendingNews(input.items)),
+    approved: publicProcedure.input(z.object({ region: z.string().optional(), topic: z.string().optional() }).optional()).query(({ input }) => listApprovedNews(input)),
+    importPending: adminProcedure.input(z.object({ items: z.array(z.object({ sourceName: z.string(), sourceUrl: z.string().url(), title: z.string().min(3), summary: z.string().min(10), editorialSummary: z.string().min(10).optional(), imageUrl: z.string().url().optional() })) })).mutation(({ input }) => importPendingNews(input.items)),
     moderation: adminProcedure.query(() => listModerationNews()),
     setStatus: adminProcedure.input(z.object({ id: z.number().int(), status: z.enum(["approved", "rejected", "pending"]) })).mutation(({ input }) => setNewsStatus(input.id, input.status)),
+    updateEditorialSummary: adminProcedure.input(z.object({ id: z.number().int(), editorialSummary: z.string().min(10) })).mutation(({ input }) => updateNewsEditorialSummary(input.id, input.editorialSummary)),
     importFeed: adminProcedure.input(z.object({ feedUrl: z.string().url(), sourceName: z.string().min(3) })).mutation(({ input }) => importNewsFromFeed(input.feedUrl, input.sourceName)),
+    importTrusted: adminProcedure.mutation(() => importTrustedNews()),
     provisionRefresh: adminProcedure.mutation(async ({ ctx }) => { const session = parseCookie(ctx.req.headers.cookie ?? "")[COOKIE_NAME] ?? ""; return createHeartbeatJob({ name: "kindstepcare-news-refresh", cron: "0 0 */6 * * *", path: "/api/scheduled/news-refresh", description: "Refresh trusted cerebral palsy news feeds into moderation every six hours" }, session); }),
   }),
   contact: router({
