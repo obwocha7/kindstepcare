@@ -39,6 +39,54 @@ const posts = [
       "KindStepCare is building a course model around practical learning: positioning, play, communication, mobility, referral pathways, and the confidence to advocate for inclusion at home, in school, and in the community.",
     ],
   },
+  {
+    slug: "cerebral-palsy-therapy-in-kenya",
+    title: "Cerebral Palsy Therapy in Kenya: What Families Should Know",
+    description: "A practical overview of physiotherapy, occupational therapy, speech support, referrals, and accessible rehabilitation for children with cerebral palsy in Kenya.",
+    category: "Therapy and rehabilitation",
+    image: "/manus-storage/therapy-parent_c696a42c.jpg",
+    body: [
+      "Cerebral palsy therapy is usually guided by a child's goals, comfort, participation, and daily routines. A qualified team may recommend physiotherapy, occupational therapy, speech and language support, assistive technology, or other services.",
+      "Families may use public hospitals, private clinics, community programmes, or mobile services depending on location and availability. Ask what the therapy is intended to support, how progress will be reviewed, and what can safely continue at home.",
+      "KindStepCare is developing practical caregiver learning and tele-rehabilitation pathways to help families in Kenya stay connected to trusted guidance between appointments.",
+    ],
+  },
+  {
+    slug: "communication-and-cerebral-palsy",
+    title: "Communication Support for Children with Cerebral Palsy",
+    description: "How families can support communication, choice-making, and participation for a child with cerebral palsy at home, school, and in the community.",
+    category: "Communication and participation",
+    image: "/manus-storage/children-inclusive-play_c5818cf2.jpg",
+    body: [
+      "Communication includes facial expression, movement, gestures, sounds, speech, signs, pictures, and communication devices. Every child deserves a way to express needs, preferences, ideas, and feelings.",
+      "Give your child time to respond, offer meaningful choices, notice their signals, and share what you learn with teachers and therapists. A speech and language professional can help identify suitable supports.",
+      "Communication support is not about making every child communicate in the same way. It is about making participation easier and ensuring the child's voice is respected.",
+    ],
+  },
+  {
+    slug: "cerebral-palsy-and-inclusive-schooling",
+    title: "Cerebral Palsy and Inclusive Schooling in Kenya",
+    description: "Practical questions for families and educators planning accessible learning, mobility, communication, and participation for children with cerebral palsy.",
+    category: "Education and inclusion",
+    image: "/manus-storage/community-care_5e677905.jpg",
+    body: [
+      "Inclusive education begins with the assumption that a child belongs in their community and can contribute to classroom life. Support may include accessible routes, flexible seating, communication tools, additional time, and learning materials in suitable formats.",
+      "Families can ask schools how they will support mobility, personal care, communication, fatigue, attendance, and participation in play and lessons. A therapist or education support professional can help turn those questions into practical adjustments.",
+      "Progress should be considered broadly: learning, friendships, confidence, communication, independence, and enjoyment all matter.",
+    ],
+  },
+  {
+    slug: "cerebral-palsy-support-for-caregivers",
+    title: "Cerebral Palsy Support for Caregivers: Building a Sustainable Routine",
+    description: "Ways caregivers can organise appointments, home activities, rest, questions, and support networks while caring for a child with cerebral palsy.",
+    category: "Family support",
+    image: "/manus-storage/hero-family-play_4fa9122a.jpg",
+    body: [
+      "Caregiving can involve appointments, transport, school coordination, home activities, advocacy, and emotional work. A sustainable routine should include the caregiver's needs as well as the child's.",
+      "Keep a short record of questions, changes, successful activities, and concerns before appointments. Share tasks where possible and accept practical help from trusted people without treating support as a failure.",
+      "If you feel overwhelmed, persistently low, unsafe, or unable to cope, speak with a qualified health professional or local support service. Caregivers deserve care too.",
+    ],
+  },
 ];
 
 export function Blog() {

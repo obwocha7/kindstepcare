@@ -97,3 +97,31 @@
 - [x] Capture a post-edit desktop screenshot to verify hero and card spacing at large breakpoints
 
 - [x] Save a successful checkpoint for the exact post-refinement state after the latest Home, blog, and CSS changes
+
+## Homepage hierarchy and article expansion
+
+- [ ] Remove the overlapping Care note and Today’s reminder hero cards
+- [ ] Add image-led care-gap and service sections with softer visual hierarchy
+- [ ] Add meaningful icons to therapy, outreach, caregiver, and donor points
+- [ ] Expand the public SEO blog library from three to seven articles
+- [ ] Update sitemap and related article navigation for all new blog URLs
+- [x] Re-run responsive checks and tests, then save a new checkpoint
+
+## Hero and image-rich refinement
+
+- [x] Remove the Care note and Today’s reminder cards from the hero to eliminate overlap
+- [x] Remove the stripe-like hero gradient overlay and use a colorful, clean rotating photo treatment
+- [x] Add richer imagery to the care-gap, service, impact, learning, and donor sections
+- [x] Add icons to service and support points without crowding the layout
+- [x] Confirm six or seven SEO articles are public, linked, and present in the sitemap
+- [x] Re-run responsive checks and tests, then save a refined checkpoint
+
+- [x] Add an explicit image-led impact section and donor section treatment
+- [x] Capture post-edit mobile screenshots for homepage, blog, and FAQ
+- [x] Save a successful checkpoint for the exact latest homepage, article, and sitemap state
+
+- [x] Capture post-edit mobile screenshots for /blog and /faq after the latest hero and homepage changes
+- [x] Save a successful checkpoint for the exact latest homepage, article, and sitemap state
+
+- [ ] Save a new successful checkpoint after the latest Home, ContentPages, and sitemap changes
+- [ ] Verify homepage, mobile Blog, and mobile FAQ against the exact saved checkpoint state
