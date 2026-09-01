@@ -224,3 +224,14 @@
 
 - [x] Save the exact post-loop-boundary checkpoint
 - [x] Re-verify desktop and mobile carousel transitions across first-to-second and last-to-first states
+
+## Calmer hero transition
+
+- [x] Remove the flash and scale movement from the hero image transition
+- [x] Use a softer opacity-only dissolve with comfortable timing
+- [x] Verify desktop/mobile and reduced-motion behavior, run tests, and save a checkpoint
+
+- [x] Save the exact post-calmer-hero-transition checkpoint
+- [x] Re-verify desktop and mobile hero views against that saved checkpoint
+
+- [x] Save the post-calmer-transition checkpoint and re-run desktop/mobile hero verification against that saved version
