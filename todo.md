@@ -248,3 +248,13 @@
 - [x] Save the exact post-slide-transition checkpoint and re-verify desktop/mobile hero views against that saved version
 
 - [x] Save the exact post-slide-transition checkpoint and re-verify desktop/mobile hero views against that saved version
+
+## Gap-free hero crossfade
+
+- [x] Replace the background-exposing slide with a smooth persistent-layer crossfade
+- [x] Keep both image layers aligned with no visible container gap and preserve reduced-motion fallback
+- [x] Verify desktop/mobile transition behavior, run tests, and save a checkpoint
+
+- [x] Save the exact post-gap-free-crossfade checkpoint and re-verify desktop/mobile hero views against that saved version
+
+- [x] Save the exact post-gap-free-crossfade checkpoint and re-verify desktop/mobile hero views against that saved version

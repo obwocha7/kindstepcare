@@ -35,8 +35,8 @@
 @keyframes care-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee-track img{transition:none}}
 
-.hero-image{opacity:1;visibility:visible;transform:translateX(100%);transition:transform .8s cubic-bezier(.22,1,.36,1);animation:none;will-change:transform}
-.hero-image.is-active{transform:translateX(0)}
+.hero-image{opacity:0;visibility:visible;transform:none;transition:opacity .85s ease-in-out;animation:none;will-change:opacity;z-index:0}
+.hero-image.is-active{opacity:1;z-index:1}
 @property --hero-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
 .hero-frame-accent{--hero-angle:0deg;background:conic-gradient(from var(--hero-angle),#0d7a6b,#f0a12b,#d85d7a,#6a8df7,#0d7a6b);animation:hero-color-spin 9s linear infinite}
 @keyframes hero-color-spin{to{--hero-angle:360deg}}
