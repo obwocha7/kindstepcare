@@ -17,9 +17,9 @@ const storyImages = [
   "/manus-storage/contact-caregiver-v3_752a6c3c.jpg",
 ];
 const news = [
-  { type: "Learning note", date: "Today", title: "Why early support should feel close to home", copy: "A gentle guide for families beginning their rehabilitation journey.", color: "mint", imageUrl: undefined, sourceName: "KindStepCare", sourceUrl: "#contact", articleHref: "#contact" },
-  { type: "Community story", date: "This week", title: "Small steps, wider worlds", copy: "How a caregiver and therapist are building confidence through play.", color: "gold", imageUrl: undefined, sourceName: "KindStepCare", sourceUrl: "#contact", articleHref: "#contact" },
-  { type: "Field update", date: "This month", title: "Bringing therapy closer to rural families", copy: "What we are learning from mobile outreach across Kenya.", color: "teal", imageUrl: undefined, sourceName: "KindStepCare", sourceUrl: "#contact", articleHref: "#contact" },
+  { type: "Learning note", date: "Today", title: "Why early support should feel close to home", copy: "A Kenya-focused guide for families beginning a rehabilitation journey.", color: "mint", imageUrl: undefined, sourceName: "KindStepCare", sourceUrl: "/blog/early-cerebral-palsy-support-in-kenya", articleHref: "/blog/early-cerebral-palsy-support-in-kenya" },
+  { type: "Community story", date: "This week", title: "Small steps, wider worlds", copy: "How play, communication, and participation can build confidence at home.", color: "gold", imageUrl: undefined, sourceName: "KindStepCare", sourceUrl: "/blog/play-and-participation-at-home", articleHref: "/blog/play-and-participation-at-home" },
+  { type: "Field update", date: "This month", title: "Bringing therapy closer to rural families", copy: "Questions families can ask about mobile therapy and community rehabilitation in Kenya.", color: "teal", imageUrl: undefined, sourceName: "KindStepCare", sourceUrl: "/blog/mobile-therapy-rural-kenya", articleHref: "/blog/mobile-therapy-rural-kenya" },
 ];
 const defaultImpact = [
   { label: "Care closer to home", value: 84, note: "Families reached through remote support" },

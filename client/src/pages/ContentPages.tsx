@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Accessibility, BookOpen, HeartHandshake, Home, MessageCircle, School, Stethoscope, Users } from "lucide-react";
 import Seo, { JsonLd } from "@/components/Seo";
 import { PageHero, SiteFrame } from "@/components/SiteFrame";
 
@@ -87,16 +88,82 @@ const posts = [
       "If you feel overwhelmed, persistently low, unsafe, or unable to cope, speak with a qualified health professional or local support service. Caregivers deserve care too.",
     ],
   },
+  {
+    slug: "early-cerebral-palsy-support-in-kenya",
+    title: "Why Early Cerebral Palsy Support Should Feel Close to Home in Kenya",
+    description: "A Kenya-focused guide to noticing developmental concerns, seeking early support, and building a practical care conversation without waiting for perfect conditions.",
+    category: "Early support in Kenya",
+    image: "/manus-storage/therapy-session-v3_3f9ddfa4.jpg",
+    body: [
+      "When a caregiver notices that a child is moving, feeding, communicating, or reaching differently, the next step does not have to be a diagnosis at home. It can be a careful conversation with a nurse, clinical officer, doctor, therapist, or child-health service about what you are seeing.",
+      "Early support is useful because it helps a family understand the child’s goals and make everyday participation easier. International guidance supports prompt referral for children at high risk of cerebral palsy or with a diagnosis, while the CDC notes that intervention can begin before a diagnosis in some systems. In Kenya, families can ask a local health facility about developmental assessment, rehabilitation referral, and the most practical route for follow-up in their county.",
+      "Keep a short record of questions, changes, favourite activities, feeding or sleep concerns, and what helps your child participate. Bring it to the next appointment. KindStepCare’s tele-rehabilitation and caregiver-learning model is designed to help families stay connected to trusted guidance between in-person visits, not to replace clinical assessment.",
+    ],
+    sources: [
+      ["CDC: Treatment and Intervention for Cerebral Palsy", "https://www.cdc.gov/cerebral-palsy/treatment/index.html"],
+      ["Morgan et al.: Early Intervention Guideline", "https://doi.org/10.1001/jamapediatrics.2021.0878"],
+    ],
+  },
+  {
+    slug: "play-and-participation-at-home",
+    title: "Play, Communication, and Participation at Home: A Cerebral Palsy Guide for Kenyan Caregivers",
+    description: "Practical, safe ways to use play and daily routines to support communication and participation for a child with cerebral palsy in a Kenyan home.",
+    category: "Play and participation",
+    image: "/manus-storage/learning-play-v3_c6c612b9.jpg",
+    body: [
+      "Play is not a reward after therapy; it is part of childhood. A caregiver can create small opportunities for choice, reaching, looking, listening, turn-taking, and shared enjoyment using familiar items already available at home.",
+      "Try offering two safe choices, placing a favourite object within comfortable reach, pausing so your child has time to respond, or singing a repeated song during dressing and mealtimes. These ideas should be adapted to the child’s posture, vision, hearing, communication, and energy. A qualified therapist can help a family choose safe positions and meaningful goals.",
+      "Participation matters beyond movement. Notice how your child communicates yes and no, joins siblings, enjoys a story, or takes part in a household routine. Stop when the child is distressed, in pain, unusually tired, or short of breath, and seek professional guidance rather than forcing a stretch or copying an online exercise.",
+    ],
+    sources: [
+      ["CDC: About Cerebral Palsy", "https://www.cdc.gov/cerebral-palsy/about/index.html"],
+      ["UNICEF: Children with disabilities", "https://www.unicef.org/disabilities"],
+    ],
+  },
+  {
+    slug: "mobile-therapy-rural-kenya",
+    title: "Mobile Therapy and Community Rehabilitation in Rural Kenya: What Families Can Ask",
+    description: "A practical guide to preparing for mobile therapy, community-based rehabilitation, transport challenges, and continuity of care for children with cerebral palsy in Kenya.",
+    category: "Community rehabilitation",
+    image: "/manus-storage/outreach-community-v3_d9150847.jpg",
+    body: [
+      "For families outside major towns, the hardest part of rehabilitation may be reaching the right service consistently. Distance, transport costs, school schedules, equipment, and limited specialist availability can all shape what care is realistic. A useful plan starts with the family’s daily life and the child’s priorities.",
+      "Before a mobile or community therapy visit, write down the child’s main goal, what has changed, what is working, and which routine feels difficult. Ask what the session is intended to support, what can safely continue at home, when progress will be reviewed, and who to contact if a concern appears between visits.",
+      "Community-based support works best when caregivers, therapists, teachers, community health workers, and referral facilities share information respectfully. It should strengthen access and participation, while urgent symptoms and new medical concerns still require prompt assessment through an appropriate health service.",
+    ],
+    sources: [
+      ["Geere et al.: Caregiving and physical health in Kilifi, Kenya", "https://pmc.ncbi.nlm.nih.gov/articles/PMC3654176/"],
+      ["UNICEF: Children with disabilities", "https://www.unicef.org/disabilities"],
+    ],
+  },
 ];
 
+const categoryIcons: Record<string, typeof BookOpen> = {
+  "Understanding cerebral palsy": Accessibility,
+  "Home therapy and play": Home,
+  "Caregiver learning": Users,
+  "Therapy and rehabilitation": Stethoscope,
+  "Communication and participation": MessageCircle,
+  "Education and inclusion": School,
+  "Family support": HeartHandshake,
+  "Early support in Kenya": Accessibility,
+  "Play and participation": Home,
+  "Community rehabilitation": Users,
+};
+
+function CategoryBadge({ category }: { category: string }) {
+  const Icon = categoryIcons[category] ?? BookOpen;
+  return <div className="eyebrow flex items-center gap-2"><span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#e8f5f2] text-[#0d7a6b]"><Icon className="h-4 w-4" /></span>{category}</div>;
+}
+
 export function Blog() {
-  return <SiteFrame><Seo title="Cerebral Palsy Blog & Caregiver Learning in Kenya | KindStepCare" description="SEO-rich, plain-language articles about cerebral palsy, home therapy, caregiver learning, inclusion, and family support in Kenya and Africa." path="/blog" /><PageHero eyebrow="The KindStepCare journal" title="Useful knowledge for the next small step." copy="Practical guidance on cerebral palsy care, therapy, play, and family support." image="/manus-storage/blog-caregiver-guide-v3_4a9dfa02.jpg" /><main className="container py-16"><div className="grid gap-6 lg:grid-cols-3">{posts.map((post) => <article key={post.slug} className="group overflow-hidden rounded-[2rem] border border-[#d9e9e5] bg-white shadow-[0_16px_50px_rgba(26,42,38,.05)]"><img src={post.image} alt="" className="h-56 w-full object-cover transition duration-700 group-hover:scale-105" /><div className="p-7"><div className="eyebrow">{post.category}</div><h2 className="mt-4 font-serif text-3xl font-semibold">{post.title}</h2><p className="mt-4 leading-7 text-[#607a74]">{post.description}</p><a href={`/blog/${post.slug}`} className="mt-6 inline-flex font-bold text-[#0d7a6b]">Read the guide <span className="ml-2">→</span></a></div></article>)}</div><p className="mt-10 text-center text-sm font-semibold text-[#607a74]">More articles coming soon.</p></main></SiteFrame>;
+  return <SiteFrame><Seo title="Cerebral Palsy Blog & Caregiver Learning in Kenya | KindStepCare" description="SEO-rich, plain-language articles about cerebral palsy, home therapy, caregiver learning, inclusion, and family support in Kenya and Africa." path="/blog" /><PageHero eyebrow="The KindStepCare journal" title="Useful knowledge for the next small step." copy="Practical guidance on cerebral palsy care, therapy, play, and family support." image="/manus-storage/blog-caregiver-guide-v3_4a9dfa02.jpg" /><main className="container py-16"><div className="grid gap-6 lg:grid-cols-3">{posts.map((post) => <article key={post.slug} className="group overflow-hidden rounded-[2rem] border border-[#d9e9e5] bg-white shadow-[0_16px_50px_rgba(26,42,38,.05)]"><img src={post.image} alt="" className="h-56 w-full object-cover transition duration-700 group-hover:scale-105" /><div className="p-7"><CategoryBadge category={post.category} /><h2 className="mt-4 font-serif text-3xl font-semibold">{post.title}</h2><p className="mt-4 leading-7 text-[#607a74]">{post.description}</p><a href={`/blog/${post.slug}`} className="mt-6 inline-flex font-bold text-[#0d7a6b]">Read the guide <span className="ml-2">→</span></a></div></article>)}</div><p className="mt-10 text-center text-sm font-semibold text-[#607a74]">More articles coming soon.</p></main></SiteFrame>;
   }
 
 export function BlogArticle({ slug }: { slug: string }) {
   const post = posts.find((entry) => entry.slug === slug);
   if (!post) return <SiteFrame><Seo title="Article not found | KindStepCare" description="This KindStepCare article is not available." path={`/blog/${slug}`} /><main className="container py-24"><h1 className="font-serif text-5xl font-semibold">This article is not available.</h1><a href="/blog" className="mt-6 inline-flex font-bold text-[#0d7a6b]">Back to the blog →</a></main></SiteFrame>;
-  return <SiteFrame><Seo title={`${post.title} | KindStepCare`} description={post.description} path={`/blog/${post.slug}`} image={post.image} type="article" /><JsonLd data={{ "@context": "https://schema.org", "@type": "Article", headline: post.title, description: post.description, image: [post.image], author: { "@type": "Organization", name: "KindStepCare" }, publisher: { "@type": "Organization", name: "KindStepCare" } }} /><main className="container max-w-5xl py-16"><div className="grid gap-10 lg:grid-cols-[1fr_.72fr] lg:items-start"><article><div className="eyebrow">{post.category}</div><h1 className="mt-5 font-serif text-5xl font-semibold leading-[1.02] tracking-[-.04em] sm:text-7xl">{post.title}</h1><p className="mt-7 text-xl leading-9 text-[#607a74]">{post.description}</p><div className="mt-10 space-y-7 text-lg leading-9 text-[#3e5c56]">{post.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div><a href="/contact" className="mt-10 inline-flex rounded-full bg-[#f0a12b] px-6 py-4 font-bold text-[#1a2a26]">Talk with the care team →</a></article><aside className="sticky top-8 overflow-hidden rounded-[2rem] bg-[#e8f5f2] p-3"><img src={post.image} alt="" className="aspect-[4/5] w-full rounded-[1.5rem] object-cover" /><div className="p-5"><div className="eyebrow">A gentle reminder</div><p className="mt-3 leading-7 text-[#607a74]">Online information supports questions and confidence. It does not replace an assessment from a qualified health professional.</p></div></aside></div></main></SiteFrame>;
+  return <SiteFrame><Seo title={`${post.title} | KindStepCare`} description={post.description} path={`/blog/${post.slug}`} image={post.image} type="article" /><JsonLd data={{ "@context": "https://schema.org", "@type": "Article", headline: post.title, description: post.description, image: [post.image], author: { "@type": "Organization", name: "KindStepCare" }, publisher: { "@type": "Organization", name: "KindStepCare" } }} /><main className="container max-w-5xl py-16"><div className="grid gap-10 lg:grid-cols-[1fr_.72fr] lg:items-start"><article><CategoryBadge category={post.category} /><h1 className="mt-5 font-serif text-5xl font-semibold leading-[1.02] tracking-[-.04em] sm:text-7xl">{post.title}</h1><p className="mt-7 text-xl leading-9 text-[#607a74]">{post.description}</p><div className="mt-10 space-y-7 text-lg leading-9 text-[#3e5c56]">{post.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>{post.sources && <div className="mt-12 rounded-2xl border border-[#d9e9e5] bg-[#f7fbfa] p-6"><div className="eyebrow">Sources and further reading</div><ul className="mt-4 grid gap-3 text-sm leading-6 text-[#607a74]">{post.sources.map(([label, url]) => <li key={url}><a className="font-semibold text-[#0d7a6b] underline decoration-[#f0a12b] underline-offset-4" href={url} target="_blank" rel="noreferrer">{label} ↗</a></li>)}</ul></div>}<a href="/contact" className="mt-10 inline-flex rounded-full bg-[#f0a12b] px-6 py-4 font-bold text-[#1a2a26]">Talk with the care team →</a></article><aside className="sticky top-8 overflow-hidden rounded-[2rem] bg-[#e8f5f2] p-3"><img src={post.image} alt="" className="aspect-[4/5] w-full rounded-[1.5rem] object-cover" /><div className="p-5"><div className="eyebrow">A gentle reminder</div><p className="mt-3 leading-7 text-[#607a74]">Online information supports questions and confidence. It does not replace an assessment from a qualified health professional.</p></div></aside></div></main></SiteFrame>;
 }
 
 const faqs = [

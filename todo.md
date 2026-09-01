@@ -186,3 +186,12 @@
 - [x] Add the KindStepCare logo beside the footer wordmark
 - [x] Replace the footer newsletter prompt with an emotional quote
 - [x] Verify desktop/mobile footer layout, run tests, and save a new checkpoint
+
+## Kenya-focused blog research and SEO
+
+- [x] Research Kenya-specific cerebral palsy, rehabilitation, disability inclusion, and caregiver support context
+- [x] Localize article keywords, examples, referral language, and calls to action for Kenyan families
+- [x] Map homepage learning notes to dedicated SEO-rich blog articles and add suitable icons
+- [x] Re-run content/link/accessibility tests and save a new checkpoint
+
+- [x] Fix dynamic category-icon JSX in the blog card and article badge, then re-run checks
