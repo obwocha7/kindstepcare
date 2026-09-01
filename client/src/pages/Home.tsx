@@ -30,7 +30,9 @@ const defaultImpact = [
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [heroIndex, setHeroIndex] = useState(0);
-  useEffect(() => { const timer = window.setInterval(() => setHeroIndex((index) => (index + 1) % heroImages.length), 2200); return () => window.clearInterval(timer); }, []);
+  const [reducedMotion, setReducedMotion] = useState<boolean | null>(null);
+  useEffect(() => { const media = window.matchMedia("(prefers-reduced-motion: reduce)"); const update = () => setReducedMotion(media.matches); update(); media.addEventListener("change", update); return () => media.removeEventListener("change", update); }, []);
+  useEffect(() => { if (reducedMotion !== false) return; const timer = window.setInterval(() => setHeroIndex((index) => (index + 1) % heroImages.length), 2200); return () => window.clearInterval(timer); }, [reducedMotion]);
   useEffect(() => { heroImages.forEach((source) => { const image = new Image(); image.decoding = "async"; image.src = source; }); }, []);
   const [selectedImpact, setSelectedImpact] = useState(defaultImpact[0]);
   const [email, setEmail] = useState("");

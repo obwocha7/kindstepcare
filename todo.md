@@ -235,3 +235,16 @@
 - [x] Re-verify desktop and mobile hero views against that saved checkpoint
 
 - [x] Save the post-calmer-transition checkpoint and re-run desktop/mobile hero verification against that saved version
+
+## Non-flashing hero transition
+
+- [x] Replace the opacity dissolve with a horizontal slide that has no flash, scale, or brightness effect
+- [x] Preserve preloading and provide a static reduced-motion fallback
+- [x] Verify desktop/mobile slide behavior, run tests, and save a checkpoint
+
+- [x] Disable hero auto-rotation and keep one static image when prefers-reduced-motion is enabled
+- [x] Save the exact post-slide-transition checkpoint and re-verify desktop/mobile views after the fallback change
+
+- [x] Save the exact post-slide-transition checkpoint and re-verify desktop/mobile hero views against that saved version
+
+- [x] Save the exact post-slide-transition checkpoint and re-verify desktop/mobile hero views against that saved version
